@@ -28,13 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.parameters1 = new HandDrawn.Parameters();
             this.SuspendLayout();
+            // 
+            // parameters1
+            // 
+            this.parameters1.Location = new System.Drawing.Point(12, 12);
+            this.parameters1.Name = "parameters1";
+            this.parameters1.Size = new System.Drawing.Size(129, 63);
+            this.parameters1.TabIndex = 0;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.parameters1);
             this.Name = "Main";
             this.Text = "Main";
             this.ResumeLayout(false);
@@ -42,6 +51,8 @@
         }
 
         #endregion
+
+        private Parameters parameters1;
     }
 }
 
