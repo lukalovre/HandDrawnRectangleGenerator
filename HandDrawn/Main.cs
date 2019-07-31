@@ -14,8 +14,7 @@ namespace HandDrawn
         {
             Algorithm1.Draw(Parameters.Instance.Width, Parameters.Instance.Height);
 
-            pictureBoxResult.ImageLocation = "Result.png";
-            pictureBoxResult.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBoxResult.ImageLocation = IO.FileName;
         }
     }
 }

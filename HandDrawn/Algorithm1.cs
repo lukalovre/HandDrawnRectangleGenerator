@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using System.Drawing.Imaging;
 
 namespace HandDrawn
 {
@@ -24,7 +23,7 @@ namespace HandDrawn
                     }
                 }
 
-                bitmap.Save(@"Result.png", ImageFormat.Png);
+                IO.Save(bitmap);
             }
         }
     }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.buttonGenerate = new System.Windows.Forms.Button();
-            this.parameters1 = new HandDrawn.Parameters();
             this.pictureBoxResult = new System.Windows.Forms.PictureBox();
+            this.parameters1 = new HandDrawn.Parameters();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,20 +44,21 @@
             this.buttonGenerate.UseVisualStyleBackColor = true;
             this.buttonGenerate.Click += new System.EventHandler(this.ButtonGenerateClick);
             // 
+            // pictureBoxResult
+            // 
+            this.pictureBoxResult.Location = new System.Drawing.Point(173, 13);
+            this.pictureBoxResult.Name = "pictureBoxResult";
+            this.pictureBoxResult.Size = new System.Drawing.Size(606, 425);
+            this.pictureBoxResult.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxResult.TabIndex = 2;
+            this.pictureBoxResult.TabStop = false;
+            // 
             // parameters1
             // 
             this.parameters1.Location = new System.Drawing.Point(12, 12);
             this.parameters1.Name = "parameters1";
             this.parameters1.Size = new System.Drawing.Size(129, 63);
             this.parameters1.TabIndex = 0;
-            // 
-            // pictureBoxResult
-            // 
-            this.pictureBoxResult.Location = new System.Drawing.Point(173, 13);
-            this.pictureBoxResult.Name = "pictureBoxResult";
-            this.pictureBoxResult.Size = new System.Drawing.Size(606, 425);
-            this.pictureBoxResult.TabIndex = 2;
-            this.pictureBoxResult.TabStop = false;
             // 
             // Main
             // 
@@ -71,6 +72,7 @@
             this.Text = "Main";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
