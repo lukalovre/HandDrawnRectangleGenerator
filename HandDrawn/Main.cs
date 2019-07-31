@@ -13,6 +13,9 @@ namespace HandDrawn
         private void ButtonGenerateClick(object sender, EventArgs e)
         {
             Algorithm1.Draw(Parameters.Instance.Width, Parameters.Instance.Height);
+
+            pictureBoxResult.ImageLocation = "Result.png";
+            pictureBoxResult.SizeMode = PictureBoxSizeMode.AutoSize;
         }
     }
 }

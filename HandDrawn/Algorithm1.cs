@@ -18,12 +18,9 @@ namespace HandDrawn
             {
                 using(Graphics graphics = Graphics.FromImage(bitmap))
                 {
-                    for(int y = 0; y < height; y++)
+                    for(int x = 0; x < width; x++)
                     {
-                        for(int x = 0; x < width; x++)
-                        {
-                            graphics.FillRectangle(s_brush, x, maxDeviation, s_brushSize, s_brushSize);
-                        }
+                        graphics.FillRectangle(s_brush, x, maxDeviation, s_brushSize, s_brushSize);
                     }
                 }
 
