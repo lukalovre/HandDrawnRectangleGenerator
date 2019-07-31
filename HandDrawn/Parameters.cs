@@ -8,9 +8,13 @@ namespace HandDrawn
 
         public new int Height => (int)numericUpDownHeigth.Value;
 
+        public static Parameters Instance;
+
         public Parameters()
         {
             InitializeComponent();
+
+            Instance = this;
         }
     }
 }
