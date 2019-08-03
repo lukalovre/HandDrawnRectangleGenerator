@@ -17,6 +17,9 @@ namespace HandDrawn
         public Main()
         {
             InitializeComponent();
+
+            PictureBox1Click(null,null);
+            PictureBox2Click(null,null);
         }
 
         private void Draw(Algorithm algorithm)
