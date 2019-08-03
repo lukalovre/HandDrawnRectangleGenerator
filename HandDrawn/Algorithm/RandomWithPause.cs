@@ -9,14 +9,15 @@ namespace HandDrawn.Algorithm
 
         private static int s_previousY = -1;
 
-        public static void Draw(Graphics graphics, int width, int height)
+        public static void Draw(Graphics graphics, int width, int height, int amount)
         {
-            int doMoveInterval = 1;
+            int doMoveInterval = amount;
             int moveInterval = 0;
 
             for(int x = 0; x < width; x++)
             {
-              int y = 0;
+                moveInterval++;
+                int y = 0;
 
                 if(s_previousY < 0)
                 {
@@ -48,7 +49,6 @@ namespace HandDrawn.Algorithm
                 graphics.Draw(x, y);
 
                 s_previousY = y;
-                moveInterval++;
             }
         }
     }

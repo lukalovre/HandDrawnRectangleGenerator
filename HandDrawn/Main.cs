@@ -19,12 +19,16 @@ namespace HandDrawn
         {
             InitializeComponent();
 
-            PictureBox1Click(null,null);
-            PictureBox2Click(null,null);
+            PictureBox1Click(null, null);
+            PictureBox2Click(null, null);
             PictureBox3Click(null, null);
+            PictureBox4Click(null, null);
+            PictureBox5Click(null, null);
+            PictureBox6Click(null, null);
+            PictureBox7Click(null, null);
         }
 
-        private void Draw(Algorithm algorithm)
+        private void Draw(Algorithm algorithm, int amount = 1)
         {
             using(Bitmap bitmap = new Bitmap(Parameters.Instance.Width, Parameters.Instance.Height + 2 * DrawTools.MaxDeviation))
             {
@@ -39,14 +43,12 @@ namespace HandDrawn
                             Random.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height);
                             break;
                         case Algorithm.RandomWithPause:
-                            RandomWithPause.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height);
+                            RandomWithPause.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height, amount);
                             break;
-                        default:
-                            throw new ArgumentOutOfRangeException(nameof(algorithm), algorithm, null);
                     }
                 }
 
-                IO.Save(bitmap, algorithm.ToString());
+                IO.Save(bitmap, algorithm.ToString() + amount);
             }
         }
 
@@ -58,14 +60,49 @@ namespace HandDrawn
 
         private void PictureBox2Click(object sender, EventArgs e)
         {
-            Draw(Algorithm.Random);
-            pictureBox2.ImageLocation = Algorithm.Random.ToString();
+            Draw(Algorithm.RandomWithPause, 1);
+            pictureBox2.ImageLocation = Algorithm.RandomWithPause.ToString() + 1;
         }
 
         private void PictureBox3Click(object sender, EventArgs e)
         {
-            Draw(Algorithm.RandomWithPause);
-            pictureBox3.ImageLocation = Algorithm.RandomWithPause.ToString();
+            Draw(Algorithm.RandomWithPause, 2);
+            pictureBox3.ImageLocation = Algorithm.RandomWithPause.ToString() + 2;
+        }
+
+        private void PictureBox4Click(object sender, EventArgs e)
+        {
+            Draw(Algorithm.RandomWithPause, 5);
+            pictureBox4.ImageLocation = Algorithm.RandomWithPause.ToString() + 5;
+        }
+
+        private void PictureBox5Click(object sender, EventArgs e)
+        {
+            Draw(Algorithm.RandomWithPause, 10);
+            pictureBox5.ImageLocation = Algorithm.RandomWithPause.ToString() + 10;
+        }
+
+        private void PictureBox6Click(object sender, EventArgs e)
+        {
+            Draw(Algorithm.RandomWithPause, 25);
+            pictureBox6.ImageLocation = Algorithm.RandomWithPause.ToString() + 25;
+        }
+
+        private void PictureBox7Click(object sender, EventArgs e)
+        {
+            Draw(Algorithm.RandomWithPause, 50);
+            pictureBox7.ImageLocation = Algorithm.RandomWithPause.ToString() + 50;
+        }
+
+        private void ButtonGenerateClick(object sender, EventArgs e)
+        {
+            PictureBox1Click(null, null);
+            PictureBox2Click(null, null);
+            PictureBox3Click(null, null);
+            PictureBox4Click(null, null);
+            PictureBox5Click(null, null);
+            PictureBox6Click(null, null);
+            PictureBox7Click(null, null);
         }
     }
 }
