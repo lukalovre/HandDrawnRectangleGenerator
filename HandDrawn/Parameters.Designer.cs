@@ -66,7 +66,7 @@
             this.numericUpDownWidth.Size = new System.Drawing.Size(78, 20);
             this.numericUpDownWidth.TabIndex = 2;
             this.numericUpDownWidth.Value = new decimal(new int[] {
-            200,
+            600,
             0,
             0,
             0});

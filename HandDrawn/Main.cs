@@ -28,7 +28,7 @@ namespace HandDrawn
             {
                 using(Graphics graphics = Graphics.FromImage(bitmap))
                 {
-                    Straigth.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height);
+                    //Straigth.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height);
                     Random.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height);
                 }
 
