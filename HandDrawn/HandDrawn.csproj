@@ -46,7 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithm1.cs" />
+    <Compile Include="Algorithm\Straigth.cs" />
+    <Compile Include="Algorithm\Random.cs" />
     <Compile Include="DrawTools.cs" />
     <Compile Include="IO.cs" />
     <Compile Include="Main.cs">

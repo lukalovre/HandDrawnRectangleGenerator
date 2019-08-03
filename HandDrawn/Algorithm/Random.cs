@@ -1,8 +1,8 @@
 ﻿using System.Drawing;
 
-namespace HandDrawn
+namespace HandDrawn.Algorithm
 {
-    public static class Algorithm1
+    public static class Random
     {
         public static void Draw(Graphics graphics, int width, int height)
         {

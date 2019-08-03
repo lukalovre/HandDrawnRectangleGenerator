@@ -2,6 +2,10 @@
 using System.Drawing;
 using System.Windows.Forms;
 
+using HandDrawn.Algorithm;
+
+using Random = HandDrawn.Algorithm.Random;
+
 namespace HandDrawn
 {
     public partial class Main : Form
@@ -24,7 +28,8 @@ namespace HandDrawn
             {
                 using(Graphics graphics = Graphics.FromImage(bitmap))
                 {
-                    Algorithm1.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height);
+                    Straigth.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height);
+                    Random.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height);
                 }
 
                 IO.Save(bitmap);
