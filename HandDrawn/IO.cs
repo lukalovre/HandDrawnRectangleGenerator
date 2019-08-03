@@ -5,11 +5,9 @@ namespace HandDrawn
 {
     public static class IO
     {
-        internal static readonly string FileName = "Result.png";
-
-        public static void Save(Bitmap bitmap)
+        public static void Save(Bitmap bitmap,string fileName)
         {
-            bitmap.Save(FileName, ImageFormat.Png);
+            bitmap.Save(fileName, ImageFormat.Png);
         }
     }
 }

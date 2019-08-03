@@ -2,7 +2,7 @@
 
 namespace HandDrawn.Algorithm
 {
-    public static class Straigth
+    public static class Straight
     {
         public static void Draw(Graphics graphics, int width, int height)
         {

@@ -1,39 +1,55 @@
-﻿using System;
+﻿using HandDrawn.Algorithm;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
-
-using HandDrawn.Algorithm;
-
 using Random = HandDrawn.Algorithm.Random;
 
 namespace HandDrawn
 {
     public partial class Main : Form
     {
+        private enum Algorithm
+        {
+            Straight,
+            Random
+        }
+
         public Main()
         {
             InitializeComponent();
         }
 
-        private void ButtonGenerateClick(object sender, EventArgs e)
-        {
-            Draw();
-
-            pictureBoxResult.ImageLocation = IO.FileName;
-        }
-
-        private void Draw()
+        private void Draw(Algorithm algorithm)
         {
             using(Bitmap bitmap = new Bitmap(Parameters.Instance.Width, Parameters.Instance.Height + 2 * DrawTools.MaxDeviation))
             {
                 using(Graphics graphics = Graphics.FromImage(bitmap))
                 {
-                    //Straigth.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height);
-                    Random.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height);
+                    switch(algorithm)
+                    {
+                        case Algorithm.Straight:
+                            Straight.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height);
+                            break;
+                        case Algorithm.Random:
+                            Random.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height);
+                            break;
+                    }
                 }
 
-                IO.Save(bitmap);
+                IO.Save(bitmap, algorithm.ToString());
             }
+        }
+
+        private void PictureBox1Click(object sender, EventArgs e)
+        {
+            Draw(Algorithm.Straight);
+            pictureBox1.ImageLocation = Algorithm.Straight.ToString();
+        }
+
+        private void PictureBox2Click(object sender, EventArgs e)
+        {
+            Draw(Algorithm.Random);
+            pictureBox2.ImageLocation = Algorithm.Random.ToString();
         }
     }
 }
