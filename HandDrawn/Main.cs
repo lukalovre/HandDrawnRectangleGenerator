@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace HandDrawn
@@ -12,9 +13,22 @@ namespace HandDrawn
 
         private void ButtonGenerateClick(object sender, EventArgs e)
         {
-            Algorithm1.Draw(Parameters.Instance.Width, Parameters.Instance.Height);
+            Draw();
 
             pictureBoxResult.ImageLocation = IO.FileName;
+        }
+
+        private void Draw()
+        {
+            using(Bitmap bitmap = new Bitmap(Parameters.Instance.Width, Parameters.Instance.Height + 2 * DrawTools.MaxDeviation))
+            {
+                using(Graphics graphics = Graphics.FromImage(bitmap))
+                {
+                    Algorithm1.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height);
+                }
+
+                IO.Save(bitmap);
+            }
         }
     }
 }

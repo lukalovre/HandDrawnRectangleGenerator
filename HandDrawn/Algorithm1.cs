@@ -4,19 +4,12 @@ namespace HandDrawn
 {
     public static class Algorithm1
     {
-        public static void Draw(int width, int height)
+        public static void Draw(Graphics graphics, int width, int height)
         {
-            using(Bitmap bitmap = new Bitmap(width, height + 2 * DrawTools.MaxDeviation))
+            for(int x = 0; x < width; x++)
             {
-                using(Graphics graphics = Graphics.FromImage(bitmap))
-                {
-                    for(int x = 0; x < width; x++)
-                    {
-                        graphics.FillRectangle(DrawTools.Brush, x, DrawTools.MaxDeviation, DrawTools.BrushSize, DrawTools.BrushSize);
-                    }
-                }
-
-                IO.Save(bitmap);
+                var y = DrawTools.MaxDeviation;
+                graphics.Draw(x, y);
             }
         }
     }
