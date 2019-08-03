@@ -11,7 +11,8 @@ namespace HandDrawn
         private enum Algorithm
         {
             Straight,
-            Random
+            Random,
+            RandomWithPause
         }
 
         public Main()
@@ -20,6 +21,7 @@ namespace HandDrawn
 
             PictureBox1Click(null,null);
             PictureBox2Click(null,null);
+            PictureBox3Click(null, null);
         }
 
         private void Draw(Algorithm algorithm)
@@ -36,6 +38,11 @@ namespace HandDrawn
                         case Algorithm.Random:
                             Random.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height);
                             break;
+                        case Algorithm.RandomWithPause:
+                            RandomWithPause.Draw(graphics, Parameters.Instance.Width, Parameters.Instance.Height);
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(algorithm), algorithm, null);
                     }
                 }
 
@@ -53,6 +60,12 @@ namespace HandDrawn
         {
             Draw(Algorithm.Random);
             pictureBox2.ImageLocation = Algorithm.Random.ToString();
+        }
+
+        private void PictureBox3Click(object sender, EventArgs e)
+        {
+            Draw(Algorithm.RandomWithPause);
+            pictureBox3.ImageLocation = Algorithm.RandomWithPause.ToString();
         }
     }
 }

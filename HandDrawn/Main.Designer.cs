@@ -44,6 +44,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(606, 72);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.PictureBox3Click);
             // 
             // parameters1
             // 
