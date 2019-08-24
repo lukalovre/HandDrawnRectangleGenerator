@@ -54,44 +54,51 @@ namespace HandDrawn
 
         private void PictureBox1Click(object sender, EventArgs e)
         {
+            int amount = 1;
             Draw(Algorithm.Straight);
-            pictureBox1.ImageLocation = Algorithm.Straight.ToString() + 1 + IO.ImageFormatString;
+            pictureBox1.ImageLocation = Algorithm.Straight.ToString() + amount + IO.ImageFormatString;
         }
 
         private void PictureBox2Click(object sender, EventArgs e)
         {
-            Draw(Algorithm.RandomWithPause, 1);
-            pictureBox2.ImageLocation = Algorithm.RandomWithPause.ToString() + 1 + IO.ImageFormatString;
+            int amount = 1;
+            Draw(Algorithm.RandomWithPause, amount);
+            pictureBox2.ImageLocation = Algorithm.RandomWithPause.ToString() + amount + IO.ImageFormatString;
         }
 
         private void PictureBox3Click(object sender, EventArgs e)
         {
-            Draw(Algorithm.RandomWithPause, 2);
-            pictureBox3.ImageLocation = Algorithm.RandomWithPause.ToString() + 2 + IO.ImageFormatString;
+            int amount = 2;
+            Draw(Algorithm.RandomWithPause, amount);
+            pictureBox3.ImageLocation = Algorithm.RandomWithPause.ToString() + amount + IO.ImageFormatString;
         }
 
         private void PictureBox4Click(object sender, EventArgs e)
         {
-            Draw(Algorithm.RandomWithPause, 5);
-            pictureBox4.ImageLocation = Algorithm.RandomWithPause.ToString() + 5 + IO.ImageFormatString;
+            int amount = 5;
+            Draw(Algorithm.RandomWithPause, amount);
+            pictureBox4.ImageLocation = Algorithm.RandomWithPause.ToString() + amount + IO.ImageFormatString;
         }
 
         private void PictureBox5Click(object sender, EventArgs e)
         {
-            Draw(Algorithm.RandomWithPause, 10);
-            pictureBox5.ImageLocation = Algorithm.RandomWithPause.ToString() + 10 + IO.ImageFormatString;
+            int amount = 10;
+            Draw(Algorithm.RandomWithPause, amount);
+            pictureBox5.ImageLocation = Algorithm.RandomWithPause.ToString() + amount + IO.ImageFormatString;
         }
 
         private void PictureBox6Click(object sender, EventArgs e)
         {
-            Draw(Algorithm.RandomWithPause, 25);
-            pictureBox6.ImageLocation = Algorithm.RandomWithPause.ToString() + 25 + IO.ImageFormatString;
+            int amount = 25;
+            Draw(Algorithm.RandomWithPause, amount);
+            pictureBox6.ImageLocation = Algorithm.RandomWithPause.ToString() + amount + IO.ImageFormatString;
         }
 
         private void PictureBox7Click(object sender, EventArgs e)
         {
-            Draw(Algorithm.RandomWithPause, 50);
-            pictureBox7.ImageLocation = Algorithm.RandomWithPause.ToString() + 50 + IO.ImageFormatString;
+            int amount = 50;
+            Draw(Algorithm.RandomWithPause, amount);
+            pictureBox7.ImageLocation = Algorithm.RandomWithPause.ToString() + amount + IO.ImageFormatString;
         }
 
         private void ButtonGenerateClick(object sender, EventArgs e)
