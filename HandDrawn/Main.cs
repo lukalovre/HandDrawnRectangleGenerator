@@ -55,43 +55,43 @@ namespace HandDrawn
         private void PictureBox1Click(object sender, EventArgs e)
         {
             Draw(Algorithm.Straight);
-            pictureBox1.ImageLocation = Algorithm.Straight.ToString();
+            pictureBox1.ImageLocation = Algorithm.Straight.ToString() + 1 + IO.ImageFormatString;
         }
 
         private void PictureBox2Click(object sender, EventArgs e)
         {
             Draw(Algorithm.RandomWithPause, 1);
-            pictureBox2.ImageLocation = Algorithm.RandomWithPause.ToString() + 1;
+            pictureBox2.ImageLocation = Algorithm.RandomWithPause.ToString() + 1 + IO.ImageFormatString;
         }
 
         private void PictureBox3Click(object sender, EventArgs e)
         {
             Draw(Algorithm.RandomWithPause, 2);
-            pictureBox3.ImageLocation = Algorithm.RandomWithPause.ToString() + 2;
+            pictureBox3.ImageLocation = Algorithm.RandomWithPause.ToString() + 2 + IO.ImageFormatString;
         }
 
         private void PictureBox4Click(object sender, EventArgs e)
         {
             Draw(Algorithm.RandomWithPause, 5);
-            pictureBox4.ImageLocation = Algorithm.RandomWithPause.ToString() + 5;
+            pictureBox4.ImageLocation = Algorithm.RandomWithPause.ToString() + 5 + IO.ImageFormatString;
         }
 
         private void PictureBox5Click(object sender, EventArgs e)
         {
             Draw(Algorithm.RandomWithPause, 10);
-            pictureBox5.ImageLocation = Algorithm.RandomWithPause.ToString() + 10;
+            pictureBox5.ImageLocation = Algorithm.RandomWithPause.ToString() + 10 + IO.ImageFormatString;
         }
 
         private void PictureBox6Click(object sender, EventArgs e)
         {
             Draw(Algorithm.RandomWithPause, 25);
-            pictureBox6.ImageLocation = Algorithm.RandomWithPause.ToString() + 25;
+            pictureBox6.ImageLocation = Algorithm.RandomWithPause.ToString() + 25 + IO.ImageFormatString;
         }
 
         private void PictureBox7Click(object sender, EventArgs e)
         {
             Draw(Algorithm.RandomWithPause, 50);
-            pictureBox7.ImageLocation = Algorithm.RandomWithPause.ToString() + 50;
+            pictureBox7.ImageLocation = Algorithm.RandomWithPause.ToString() + 50 + IO.ImageFormatString;
         }
 
         private void ButtonGenerateClick(object sender, EventArgs e)

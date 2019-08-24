@@ -16,7 +16,6 @@ namespace HandDrawn.Algorithm
 
             for(int x = 0; x < width; x++)
             {
-                moveInterval++;
                 int y = 0;
 
                 if(s_previousY < 0)
@@ -44,6 +43,8 @@ namespace HandDrawn.Algorithm
                     {
                         y = s_previousY - randomMove;
                     }
+
+                    moveInterval++;
                 }
 
                 graphics.Draw(x, y);
