@@ -14,13 +14,17 @@ namespace HandDrawn.Algorithm
             int doMoveInterval = amount;
             int moveInterval = 0;
 
+            int maxDeviation = 0;
+
             for(int x = 0; x < width; x++)
             {
+                maxDeviation = ModifyMaxDeviation(x, width);
+
                 int y = 0;
 
                 if(s_previousY < 0)
                 {
-                    y = DrawTools.MaxDeviation;
+                    y = maxDeviation;
                 }
                 else
                 {
@@ -35,13 +39,24 @@ namespace HandDrawn.Algorithm
                         randomMove = 0;
                     }
 
-                    if(Math.Abs(DrawTools.MaxDeviation - (s_previousY + randomMove)) <= DrawTools.MaxDeviation)
+                    if(Math.Abs(maxDeviation - (s_previousY + randomMove)) <= maxDeviation)
                     {
                         y = s_previousY + randomMove;
                     }
-                    else
+                    else if(Math.Abs(maxDeviation - (s_previousY - randomMove)) <= maxDeviation)
                     {
                         y = s_previousY - randomMove;
+                    }
+                    else
+                    {
+                        if(s_previousY > maxDeviation)
+                        {
+                            y = s_previousY - 1;
+                        }
+                        else
+                        {
+                            y = s_previousY + 1;
+                        }
                     }
 
                     moveInterval++;
@@ -51,6 +66,35 @@ namespace HandDrawn.Algorithm
 
                 s_previousY = y;
             }
+        }
+
+
+        private static float maxDeviationOffsetPercent = 0.1f;
+
+        private static int ModifyMaxDeviation(int x, int width)
+        {
+            float percentOfLine = x / (float)width;
+
+            if(percentOfLine <= maxDeviationOffsetPercent)
+            {
+                float offsetPercent = x / (float)(maxDeviationOffsetPercent * width);
+                return (int)(DrawTools.MaxDeviation * offsetPercent);
+            }
+
+            if(percentOfLine >= maxDeviationOffsetPercent && percentOfLine < 1 - maxDeviationOffsetPercent)
+            {
+                return DrawTools.MaxDeviation;
+            }
+
+            if(percentOfLine >= 1 - maxDeviationOffsetPercent)
+            {
+                float offsetPercent = (width - x) / (float)(maxDeviationOffsetPercent * width);
+                return (int)(DrawTools.MaxDeviation * offsetPercent);
+            }
+
+
+
+            return 0;
         }
     }
 }
