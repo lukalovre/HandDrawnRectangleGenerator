@@ -11,20 +11,26 @@ namespace HandDrawn.Algorithm
 
         public static void Draw(Graphics graphics, int width, int height, int amount)
         {
+            graphics.Clear(Color.Transparent);
+
+            DrawLine(graphics, width, height, amount);
+        }
+
+        private static void DrawLine(Graphics graphics, int width, int height, int amount)
+        {
             int doMoveInterval = amount;
             int moveInterval = 0;
-
-            int maxDeviation = 0;
+            s_previousY = -1;
 
             for(int x = 0; x < width; x++)
             {
-                maxDeviation = ModifyMaxDeviation(x, width);
+                var maxDeviation = ModifyMaxDeviation(x, width);
 
                 int y = 0;
 
                 if(s_previousY < 0)
                 {
-                    y = maxDeviation;
+                    y = maxDeviation / 2;
                 }
                 else
                 {
@@ -51,11 +57,8 @@ namespace HandDrawn.Algorithm
                     {
                         if(s_previousY > maxDeviation)
                         {
-                            y = s_previousY - 1;
-                        }
-                        else
-                        {
-                            y = s_previousY + 1;
+                            Draw(graphics, width, height, amount);
+                            return;
                         }
                     }
 
@@ -67,7 +70,6 @@ namespace HandDrawn.Algorithm
                 s_previousY = y;
             }
         }
-
 
         private static float maxDeviationOffsetPercent = 0.1f;
 
