@@ -31,7 +31,10 @@
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.buttonGenerate = new System.Windows.Forms.Button();
             this.parameters1 = new HandDrawn.Parameters();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox
@@ -45,7 +48,7 @@
             // 
             // buttonGenerate
             // 
-            this.buttonGenerate.Location = new System.Drawing.Point(13, 82);
+            this.buttonGenerate.Location = new System.Drawing.Point(12, 152);
             this.buttonGenerate.Name = "buttonGenerate";
             this.buttonGenerate.Size = new System.Drawing.Size(75, 23);
             this.buttonGenerate.TabIndex = 9;
@@ -55,23 +58,43 @@
             // 
             // parameters1
             // 
-            this.parameters1.Location = new System.Drawing.Point(12, 12);
+            this.parameters1.Location = new System.Drawing.Point(12, 83);
             this.parameters1.Name = "parameters1";
             this.parameters1.Size = new System.Drawing.Size(129, 63);
             this.parameters1.TabIndex = 0;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(12, 32);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(164, 45);
+            this.trackBar1.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Pause amount";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 564);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.buttonGenerate);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.parameters1);
             this.Name = "Main";
             this.Text = "Main";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -80,6 +103,8 @@
         private Parameters parameters1;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button buttonGenerate;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
