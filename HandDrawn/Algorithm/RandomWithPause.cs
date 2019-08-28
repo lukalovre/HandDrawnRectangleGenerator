@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace HandDrawn.Algorithm
@@ -13,18 +14,48 @@ namespace HandDrawn.Algorithm
         {
             graphics.Clear(Color.Transparent);
 
-            DrawLine(graphics, width, height, amount);
+            var lineTop = DrawLine(width, amount);
+            var lineBottom = DrawLine(width, amount);
+            var lineLeft = DrawLine(height, amount).ToVertical();
+            var lineRight = DrawLine(height, amount).ToVertical();
+
+
+            var rectangle = new List<Point>();
+
+            rectangle.AddRange(lineTop);
+            //rectangle.AddRange(lineBottom);
+            //rectangle.AddRange(lineLeft);
+            //rectangle.AddRange(lineRight);
+
+            foreach(var point in rectangle)
+            {
+                graphics.Draw(point.X, point.Y);
+            }
         }
 
-        private static void DrawLine(Graphics graphics, int width, int height, int amount)
+        private static List<Point> ToVertical(this List<Point> pointList)
         {
-            int doMoveInterval = amount;
+            var verticalPointList = new List<Point>();
+
+            foreach(var point in pointList)
+            {
+                verticalPointList.Add(new Point(point.Y, point.X));
+            }
+
+            return verticalPointList;
+
+        }
+
+        private static List<Point> DrawLine(int length, int pauseAmount)
+        {
+            var pointList = new List<Point>();
+            int doMoveInterval = pauseAmount;
             int moveInterval = 0;
             s_previousY = -1;
 
-            for(int x = 0; x < width; x++)
+            for(int x = 0; x < length; x++)
             {
-                var maxDeviation = ModifyMaxDeviation(x, width);
+                var maxDeviation = ModifyMaxDeviation(x, length);
 
                 int y = 0;
 
@@ -57,18 +88,19 @@ namespace HandDrawn.Algorithm
                     {
                         if(s_previousY > maxDeviation)
                         {
-                            Draw(graphics, width, height, amount);
-                            return;
+                            return DrawLine(length, pauseAmount);
                         }
                     }
 
                     moveInterval++;
                 }
 
-                graphics.Draw(x, y);
+                pointList.Add(new Point(x, y));
 
                 s_previousY = y;
             }
+
+            return pointList;
         }
 
         private static float maxDeviationOffsetPercent = 0.1f;
