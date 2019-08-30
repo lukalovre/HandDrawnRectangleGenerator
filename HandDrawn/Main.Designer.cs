@@ -30,9 +30,9 @@
         {
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.buttonGenerate = new System.Windows.Forms.Button();
-            this.parameters1 = new HandDrawn.Parameters();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
+            this.parameters1 = new HandDrawn.Parameters();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
@@ -56,19 +56,14 @@
             this.buttonGenerate.UseVisualStyleBackColor = true;
             this.buttonGenerate.Click += new System.EventHandler(this.ButtonGenerateClick);
             // 
-            // parameters1
-            // 
-            this.parameters1.Location = new System.Drawing.Point(12, 83);
-            this.parameters1.Name = "parameters1";
-            this.parameters1.Size = new System.Drawing.Size(129, 63);
-            this.parameters1.TabIndex = 0;
-            // 
             // trackBar1
             // 
             this.trackBar1.Location = new System.Drawing.Point(12, 32);
+            this.trackBar1.Maximum = 20;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(164, 45);
             this.trackBar1.TabIndex = 10;
+            this.trackBar1.Scroll += new System.EventHandler(this.TrackBar1Scroll);
             // 
             // label1
             // 
@@ -78,6 +73,13 @@
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Pause amount";
+            // 
+            // parameters1
+            // 
+            this.parameters1.Location = new System.Drawing.Point(12, 83);
+            this.parameters1.Name = "parameters1";
+            this.parameters1.Size = new System.Drawing.Size(129, 63);
+            this.parameters1.TabIndex = 0;
             // 
             // Main
             // 

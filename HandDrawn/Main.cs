@@ -42,18 +42,23 @@ namespace HandDrawn
                     }
                 }
 
-                IO.Save(bitmap, algorithm.ToString() + amount);
+                IO.Save(bitmap, algorithm.ToString());
             }
         }
 
         private void PictureBoxClick(object sender, EventArgs e)
         {
-            int amount = 1;
+            int amount = trackBar1.Value;
             Draw(Algorithm.RandomWithPause, amount);
-            pictureBox.ImageLocation = Algorithm.RandomWithPause.ToString() + amount + IO.ImageFormatString;
+            pictureBox.ImageLocation = Algorithm.RandomWithPause + IO.ImageFormatString;
         }
 
         private void ButtonGenerateClick(object sender, EventArgs e)
+        {
+            PictureBoxClick(null, null);
+        }
+
+        private void TrackBar1Scroll(object sender, EventArgs e)
         {
             PictureBoxClick(null, null);
         }
