@@ -17,7 +17,7 @@ namespace HandDrawn.Algorithm
             var lineTop = DrawLine(width, amount);
             var lineBottom = DrawLine(width, amount).ShifToBottom(height);
             var lineLeft = DrawLine(height, amount).ToVertical();
-            var lineRight = DrawLine(height, amount).ToVertical();
+            var lineRight = DrawLine(height, amount).ToVertical().ShifToRight(width);
 
 
             var rectangle = new List<Point>();
@@ -55,6 +55,18 @@ namespace HandDrawn.Algorithm
             }
 
             return bottomPointList;
+        }
+
+        private static List<Point> ShifToRight(this List<Point> pointList, int width)
+        {
+            var rightPointList = new List<Point>();
+
+            foreach(var point in pointList)
+            {
+                rightPointList.Add(new Point(point.X + width, point.Y));
+            }
+
+            return rightPointList;
         }
 
         private static List<Point> DrawLine(int length, int pauseAmount)

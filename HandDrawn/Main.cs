@@ -24,7 +24,7 @@ namespace HandDrawn
 
         private void Draw(Algorithm algorithm, int amount = 1)
         {
-            using(Bitmap bitmap = new Bitmap(Parameters.Instance.Width, Parameters.Instance.Height + 2 * DrawTools.MaxDeviation))
+            using(Bitmap bitmap = new Bitmap(Parameters.Instance.Width + 2 * DrawTools.MaxDeviation, Parameters.Instance.Height + 2 * DrawTools.MaxDeviation))
             {
                 using(Graphics graphics = Graphics.FromImage(bitmap))
                 {

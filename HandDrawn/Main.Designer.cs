@@ -41,7 +41,7 @@
             // 
             this.pictureBox.Location = new System.Drawing.Point(182, 13);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(544, 559);
+            this.pictureBox.Size = new System.Drawing.Size(560, 560);
             this.pictureBox.TabIndex = 4;
             this.pictureBox.TabStop = false;
             this.pictureBox.Click += new System.EventHandler(this.PictureBoxClick);
@@ -87,7 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 584);
+            this.ClientSize = new System.Drawing.Size(754, 584);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.buttonGenerate);
