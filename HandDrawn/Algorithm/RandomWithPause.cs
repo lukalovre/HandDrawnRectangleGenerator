@@ -15,7 +15,7 @@ namespace HandDrawn.Algorithm
             graphics.Clear(Color.Transparent);
 
             var lineTop = DrawLine(width, amount);
-            var lineBottom = DrawLine(width, amount);
+            var lineBottom = DrawLine(width, amount).ShifToBottom(height);
             var lineLeft = DrawLine(height, amount).ToVertical();
             var lineRight = DrawLine(height, amount).ToVertical();
 
@@ -23,9 +23,9 @@ namespace HandDrawn.Algorithm
             var rectangle = new List<Point>();
 
             rectangle.AddRange(lineTop);
-            //rectangle.AddRange(lineBottom);
-            //rectangle.AddRange(lineLeft);
-            //rectangle.AddRange(lineRight);
+            rectangle.AddRange(lineBottom);
+            rectangle.AddRange(lineLeft);
+            rectangle.AddRange(lineRight);
 
             foreach(var point in rectangle)
             {
@@ -43,7 +43,18 @@ namespace HandDrawn.Algorithm
             }
 
             return verticalPointList;
+        }
 
+        private static List<Point> ShifToBottom(this List<Point> pointList, int height)
+        {
+            var bottomPointList = new List<Point>();
+
+            foreach(var point in pointList)
+            {
+                bottomPointList.Add(new Point(point.X, point.Y + height));
+            }
+
+            return bottomPointList;
         }
 
         private static List<Point> DrawLine(int length, int pauseAmount)
