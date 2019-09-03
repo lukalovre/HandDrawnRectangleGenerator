@@ -62,5 +62,13 @@ namespace HandDrawn
         {
             PictureBoxClick(null, null);
         }
+
+        private void PictureBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            Parameters.Instance.Width = e.Location.X;
+            Parameters.Instance.Height = e.Location.Y;
+
+            PictureBoxClick(null, null);
+        }
     }
 }

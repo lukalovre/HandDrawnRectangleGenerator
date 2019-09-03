@@ -45,6 +45,7 @@
             this.pictureBox.TabIndex = 4;
             this.pictureBox.TabStop = false;
             this.pictureBox.Click += new System.EventHandler(this.PictureBoxClick);
+            this.pictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseClick);
             // 
             // buttonGenerate
             // 
